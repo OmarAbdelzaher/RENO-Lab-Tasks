@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+}
+
+@font-face {
+    font-family: Raleway-Bold;
+    src: url("../static/Raleway-Bold.ttf");
+}
+
+@font-face {
+    font-family: Raleway-Light;
+    src: url("../static/Raleway-Light.ttf");
+}
+
+@font-face {
+    font-family: Raleway-Medium;
+    src: url("../static/Raleway-Medium.ttf");
+}
+
+body{
+    background: linear-gradient(to right, #3735b1, #00c4fe)
+}
+
+.left-div{
+    text-align: center;
+    padding: 100px 0;
+    color: #fff;
+}
+
+.left-div i{
+    transform: rotate(-45deg);
+    font-size: 2.2rem;
+    animation-name: rocket-move;
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes rocket-move {
+    0%{
+        top:0px
+    }
+    50%{
+        top:-50px
+    }
+    100%{
+        top:0px
+    }
+}
+
+.left-div h2{
+    font-family: Raleway-Bold;
+}
+
+.left-div .para{
+    width: 50%;
+    margin: 0 auto;
+    font-family: Raleway-Light;
+}
+
+.login-btn{
+    border-radius: 50px !important;
+    background-color: #fff !important;
+    padding: 5px 50px !important;
+    border: 2px solid #fff;
+    margin-top: 100px !important;
+}
+
+.login-btn:hover{
+    background-color: #3735b1 !important;
+    color: #fff;
+    border-radius: 0 !important;
+    transition: 1s;
+}
+
+.login-btn a{
+    font-family: Raleway-Medium;
+    text-decoration: none;
+    color: #3735b1;
+}
+
+.login-btn:hover a{
+    color: #fff
+}
+
+.form-div{
+    margin-top: 100px;
+    background-color: #fff;
+    border-top-left-radius: 10% 60%;
+    border-bottom-left-radius: 10% 60%;
+}
+
+.form-div .header{
+    text-align: center;
+}
+
+.form-div .header h1{
+    font-size: 1.8rem;
+    font-family: Raleway-Bold;
+}
+
+.form-div label{
+    font-family: Raleway-Light;
+}
+
+.reg-btn{
+    border-radius: 50px !important;
+    background-color: #3735b1 !important;
+    padding: 5px 50px !important;
+    border: 2px solid #3735b1;
+}
+
+.reg-btn a{
+    font-family: Raleway-Medium;
+    text-decoration: none;
+    color: #fff
+}
+
+.reg-btn:hover{
+    transition: 1s;
+    border-radius: 0 !important;
+    background-color: #fff !important;
+}
+
+.reg-btn:hover a{
+    color: #3735b1
+}
+
+.emp-hirer-btns{
+    background-color: #3735b1 !important;
+    width: 25%;
+    border-radius: 50px;
+}
+
+.emp-btn{
+    background-color: #fff;
+    color: #3735b1;
+    border-radius: 50px;
+    border: 2px solid #3735b1;
+    padding: 3px 10px;
+
+}
+
+.hirer-btn{
+    background-color: #3735b1;
+    color: #fff;
+    border-radius: 50px;
+    border: transparent;
+    padding: 3px 25px;
+}
+
+form{
+    padding: 20px 50px;
+}

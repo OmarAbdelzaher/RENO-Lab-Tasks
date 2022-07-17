@@ -1,0 +1,448 @@
+/* Nav Bar Styles */
+
+.navbar-container {
+    padding-top: 10px;
+	text-align: center;
+    justify-content: center;
+}
+
+.navbar-container ul {
+	text-align: right;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.navbar-container ul li {
+	display: inline-block;
+	font-size: 20px;
+}
+
+.navbar-container ul li a {
+	color: #000;
+	text-decoration: none;
+	padding: 0 25px;
+}
+
+.navbar-container ul li .underline {
+	height: 2px;
+	background-color: transparent;
+	transition: background-color 0.5s;
+	margin: 0 auto;
+}
+
+.navbar-container ul li.active-link .underline {
+	width: 50%;
+	background-color: #000;
+}
+
+.navbar-nav{
+    margin: 0 auto;
+}
+
+/* Personal Information Styles */
+
+.hello{
+    width: fit-content;
+    padding: 5px 30px;
+    background-color: #51dcc5;
+    border-radius: 15px 15px 15px 0;
+    color: #fff;
+}
+
+.info .name h1{
+    font-size: 3.8rem;
+    padding: 2% 0;
+}
+
+.info .name h2{
+    font-size: 1.5rem
+}
+
+.info-img{
+    margin-top: 30vh !important;
+}
+
+.outer-circle{
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    border: 20px solid #efefef;
+    margin-left: 15%;
+}
+
+.inner-circle{
+    width: 290px;
+    height: 290px;
+    border-radius: 50%;
+    border: 20px solid #d8d8d8;
+}
+
+.img img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.social a{
+    text-decoration: none;
+    color:#000
+}
+
+/* About Styles */
+
+.about{
+    margin-top: 25vh !important;
+}
+
+
+.about-icon img{
+    width: 90%;
+    margin: 0 5%;
+}
+
+
+.tag{
+    border: 2px solid #50dbc4 !important;
+    color: #000;
+    margin: 5px 7px;
+}
+
+.download{
+    background-color: #50dbc4 !important;
+    border-radius: 25px !important;
+    padding: 7px 25px !important;
+}
+
+.download a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold
+}
+
+.download a:hover{
+    color: #000
+}
+
+.download i{
+    color: #fff;
+}
+
+/* What I Do styles */
+
+.what-i-do{
+    margin-top: 25vh !important;
+}
+
+.what-i-do-header{
+    text-align: center;
+    margin-bottom: 8vh;
+}
+
+.card{
+    border: 1px solid #fff !important;
+    box-shadow: 10px 10px 18px 10px #eeeeee;
+    border-radius: 0 !important;
+}
+
+.fa-dot-circle{
+    color: #a082f8;
+    font-size:2rem
+}
+
+.fa-code{
+    color: #f07d66;
+    font-size:2rem
+}
+
+.fa-object-ungroup{
+    color: #4da1e8;
+    font-size:2rem
+}
+
+/* Skills Styles */
+
+.skills{
+    margin-top: 25vh !important;
+}
+
+.skill-header{
+    text-align: center;
+    margin-bottom: 10vh;
+}
+
+.progress{
+    height: 10px !important;
+}
+
+.progress-bar{
+    background-color: #50dbc4 !important;
+}
+
+.rounded-div{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid gray;
+    position: relative;
+    left: 30%
+}
+
+.rounded-div label{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+
+.rounded-div-progress{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #50dbc4;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+
+.skill{
+    text-align: center;
+}
+
+
+/* Education & Work Experience Styles */
+
+.edu-work{
+    margin-top: 25vh !important;
+}
+
+.edu div h6, .work div .date{
+    color:#50dbc4;
+    font-weight: bold;
+}
+
+.edu div span{
+    color:#50dbc4;
+    font-style: italic;
+    margin-left: 7px
+}
+
+.work div span{
+    color:#50dbc4;
+}
+
+.work div ul{
+    margin: 0 !important;
+    padding: 1% 4% !important;
+    font-weight: bold
+}
+
+/* Recent Portfolio Styles */
+
+.recent-portfolio{
+    margin-top: 25vh !important;
+    text-align: center
+}
+
+.nav-tabs{
+    margin-top: 10vh;
+    padding: 0 20% !important;
+}
+
+.nav-item{
+    padding: 0 1.5%;
+}
+
+.nav-item a{
+    color: #000;
+}
+
+.recent-portfolio .card{
+    margin-top: 10vh;
+    box-shadow: 10px 10px 18px 10px #eeeeee;
+    border-radius: 10px !important;
+}
+
+.card img{
+    height: 40vh;
+    border-radius: 10px;
+}
+
+/* Pricing Table Styles */
+
+.pricing-table{
+    margin-top: 25vh !important;
+}
+
+.pricing-table div i{
+    font-size: 1.8rem;
+    margin-bottom: 5vh
+}
+
+.pricing-table div i, .pricing-table div h2{
+    color:#50dbc4;
+}
+
+.hire-btn{
+    background-color: #50dbc4 !important;
+    border-radius: 25px !important;
+    margin: 0 35%;
+    width: 30%;
+}
+
+.hire-btn a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold
+}
+
+.hire-btn a:hover{
+    color: #000;
+}
+
+/* Featured Posts Styles */
+
+.featured-posts{
+    margin-top: 25vh !important;
+}   
+
+.fp-header{
+    text-align: center;
+}
+
+.featured-posts div .card img{
+    border-radius: 0
+}
+
+.featured-posts h6{
+    font-weight: bold;
+    padding: 2% 0;
+}
+
+.featured-posts span{
+    color:#50dbc4
+}
+
+.read-more-btn{
+    background-color: #fff;
+    border: #fff;
+}
+
+.read-more-btn a{
+    text-decoration: none;
+    color: #50dbc4;
+}
+
+.read-more-btn a:hover{
+    color: #000;
+}
+
+/* Client Reviews Styles */
+
+.client-reviews{
+    margin-top: 25vh !important;
+}
+
+.client-reviews img{
+    height: 100%;
+    border-radius: 50%;
+}
+
+.dots{
+    margin-top: 5vh !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.dot{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #50dbc4;
+    margin-left: 10px;
+}
+
+.colored-dot{
+    background-color: #50dbc4;
+}
+
+/* Contact Me Styles */
+
+.contact-me{
+    margin-top: 25vh !important;
+}
+
+.contact{
+    overflow: hidden;
+    position: relative;
+}
+
+.img-cont{
+    opacity: 0.1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+.cont-me{
+    position: relative;
+
+}
+
+.icon-div{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #50dbc4;
+    position: relative;
+    margin: 5% 35%;
+}
+
+.icon-div i{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top:50%;
+}
+
+.send-msg-btn{
+    background-color: #50dbc4 !important;
+    border-radius: 25px !important;
+}
+
+.send-msg-btn a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+}
+
+.send-msg-btn a:hover{
+    color: #000;
+}
+
+/* Media Query */
+
+@media (max-width: 771px){
+    .info{
+        text-align: center;
+    }
+    .d-flex{
+        justify-content: center;
+    }
+    .hello{
+       margin: 0 auto;
+    }
+    .about-info .px-2{
+        justify-content: center;
+        text-align: center;
+
+    }
+    .about-info .pt-2{
+        width: 80%;
+        margin-left: 15vw;  
+    }
+    .about-info .download{
+      margin-left: 30%;
+    }
+}

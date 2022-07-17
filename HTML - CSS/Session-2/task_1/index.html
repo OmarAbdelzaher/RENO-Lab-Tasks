@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+</head>
+  <body>
+    <!-- 
+        Parent (Flex Container): 
+            display: flex
+            flex-direction : row
+
+        Justify Content vs Align Items
+            In case of ROW :
+                Justify Content => x-axis (main axis)
+                Align Items => y-axis (cross axis)
+            
+            In case of Column :
+                Justify Content => y-axis (main axis)
+                Align Items => x-axis (cross axis)
+
+        Flex is not wrapped by default:
+            flex-wrap: wrap => show items according to available space otherwise render to next line
+        
+        Nested Flex is doable (Grouping flex items)
+
+        Flex Grow: (child property)
+            flex-grow: 1 => 1,2,3 is the ratio to be taken from the whole width
+
+        Order Property: (child property)
+            default => order: 0
+            needs to be existed in more than one item
+            negative values will be first
+            
+            item-1: order:2
+            item-2: order:3
+            item-3: order:0
+
+            Render: item-3 , item-1 , item-2
+        
+        Align Self: (child property)
+            Target one specific item
+        -->
+    <nav class="navbar">
+      <div class="header">
+        <h1>Flexbox</h1>
+      </div>
+      <ul class="nav-list">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+      <div class="clear"></div>
+    </nav>
+    <div class="container">
+        <div class="container-1">
+            <div class="content">
+                <h1>Fast Track 2022</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+                    delectus laudantium soluta ipsum explicabo quod error id, obcaecati
+                    optio laborum mollitia veniam, alias quis magnam aut. Maxime illo nobis
+                    architecto.
+                </p>
+            </div>
+            <div class="aside-container">
+                <img src="./images/logo.png" alt="itworx-logo">
+            </div>
+        </div>
+        <div class="container-2">
+            <div class="cards">
+                <div class="card">
+                    <i class="fas fa-arrows-alt-v"></i>
+                    <h3>Alignment & Space</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos commodi vero cupiditate consequuntur nobis ab, repudiandae earum! Alias dolorem neque soluta, minima consequatur laborum numquam molestiae, vitae expedita repellendus eos?</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-arrows-alt"></i>
+                    <h3>Tricky Positioning</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos commodi vero cupiditate consequuntur nobis ab, repudiandae earum! Alias dolorem neque soluta, minima consequatur laborum numquam molestiae, vitae expedita repellendus eos?</p>
+                </div><div class="card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos commodi vero cupiditate consequuntur nobis ab, repudiandae earum! Alias dolorem neque soluta, minima consequatur laborum numquam molestiae, vitae expedita repellendus eos?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

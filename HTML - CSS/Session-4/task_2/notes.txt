@@ -1,0 +1,11 @@
+1- Profile picture be on top at responsive view
+    
+2- Arcs: https://bbbootstrap.com/snippets/circle-progress-bar-percent-loading-81242857
+
+3- underline tabs of recent portfolio and order in responsive
+
+4- Carousel
+
+5- Contact me cards width
+
+6- Contact Me Background

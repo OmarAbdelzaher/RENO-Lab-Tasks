@@ -1,0 +1,31 @@
+.bg{
+    background-color: #d62480;
+    color: #fff;
+    padding: 1% 1%;
+    padding-bottom: 8%;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5 , 1fr);
+    gap: 20px
+}
+
+.header{
+    grid-column: 1 / 5;
+}
+
+.sidebar{
+    grid-column: -1 / -2;
+    grid-row: 2 / 5;
+}
+
+.main{
+    grid-row: 3 / 5;
+    grid-column: 1 / 4;
+}
+
+.footer{
+    grid-column: 1 / 5;
+}

@@ -54,7 +54,3 @@ function toggle(a){
       localStorage.setItem('data-theme','light');
     }
 };
-
-
-
-// console.log(userName)

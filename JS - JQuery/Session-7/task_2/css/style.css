@@ -213,7 +213,7 @@ html.transition *:after {
 
 .follow-info span {
   font-weight: bold;
-  color: #000;
+  color: var(--text-color);
 }
 
 .follow-info .following {
@@ -244,7 +244,7 @@ html.transition *:after {
 }
 
 .nav-item a {
-  color: #000;
+  color: var(--text-color);
 }
 
 /* Tweet Content Section */

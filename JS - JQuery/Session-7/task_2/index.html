@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter Profile</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+  </head>
+  <body>
+    <div class="container card">
+      <div class="header">
+        <div class="left-content">
+          <i class="fas fa-arrow-left themed-text"></i>
+          <div class="profile-name">
+            <h5 class="themed-text to-be-changed-name">Profile Name</h5>
+            <h6>125.7k Tweets</h6>
+          </div>
+        </div>
+
+        <div class="right-content">
+          <h5 class="theme-mode themed-text">Light Theme</h5>
+          <span>
+            <form>
+             <input onclick="toggle(this.form)" id="checkbox" name="checkbox" type="checkbox" /><label for="checkbox">Toggle</label>
+            </form>
+           </span>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="cover">
+          <div class="outer-circle">
+            <div class="inner-circle to-be-changed-pic"></div>
+          </div>
+        </div>
+
+        <div class="profile-info">
+          <div class="name-padge">
+            <h3 class="themed-text to-be-changed-name">Profile Name</h3>
+            <i class="fas fa-badge-check"></i>
+          </div>
+
+          <h5 class="username">@username</h5>
+
+          <h5>Your Bio Put Here</h5>
+
+          <div class="location-date">
+            <div class="location">
+              <i class="fal fa-map-marker-alt"></i>
+              <h6 class="to-be-changed-location">Location</h6>
+            </div>
+            <div class="date">
+              <i class="far fa-calendar-alt"></i>
+              <h6>Join Since 2021</h6>
+            </div>
+          </div>
+
+          <div class="follow-info">
+            <h6 class="following"><span class="themed-text">256</span> Following</h6>
+            <h6><span class="themed-text">165</span> Followers</h6>
+          </div>
+          <button>Edit Profile</button>
+        </div>
+
+        <div class="tabs-section">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active themed-text" aria-current="page" href="#">Tweets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link themed-text" href="#">Tweets & replies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link themed-text" href="#">Media</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link themed-text" href="#">Likes</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tweet-section">
+            <div class="pp-div">
+                <div class="pp to-be-changed-pic"></div>
+            </div>
+
+            <i class="far fa-ellipsis-h themed-text"></i>
+
+          <div class="tweet-info">
+            <div class="name-padge">
+              <h4 class="themed-text to-be-changed-name">Profile Name</h4>
+              <i class="fas fa-badge-check"></i>
+              <h6 class="username">@username . 32m</h6>
+            </div>
+            <div class="tweet-content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque
+                at optio ducimus culpa inventore enim, qui, accusamus doloremque
+                similique quam, veritatis quis harum labore voluptatibus ab.
+              </p>
+            </div>
+            <div class="tweet-activity">
+                <div class="comments">
+                    <i class="far fa-comment"></i>
+                    <span>568k</span>
+                </div>
+
+                <div class="retweets">
+                    <i class="far fa-retweet"></i>
+                    <span>75k</span>
+                </div>
+
+                <div class="likes">
+                    <i class="far fa-heart"></i>
+                    <span>157</span>
+                </div>
+
+                <div class="share">
+                    <i class="far fa-share-alt"></i>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-2">
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Select background color</option>
+            <option value="#44b1f6">Cyan</option>
+            <option value="#aa3599">Purple</option>
+        </select>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

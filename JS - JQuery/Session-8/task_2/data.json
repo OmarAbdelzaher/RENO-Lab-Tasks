@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Road to Hana: Haiku, Hawaii",
+    "imagePath": "./images/img-1.jpg",
+    "description": "This scenic highway is so packed with canyons, beaches, waterfalls and other natural attractions that you need to devote a day to driving its length to do it justice. Be sure to save time for Wai'anapanapa State Park, a turnoff at mile marker No. 32 that's home to a black sand beach, an offshore lava arch, freshwater caves, ancient Hawaiian pictographs and a campground with picturesque vistas, especially at sunrise."
+  },
+  {
+    "title": "Scala dei Turchi: Agrigento, Sicily",
+    "imagePath": "./images/img-2.jpg",
+    "description": "This unusual terraced cliff of marble and sandstone gets its name, which means 'Stairs of the Turks' in English, from the marauding Ottoman pirates who used to shelter behind it. The bright white formation separates two beach coves in Agrigento and contrasts strikingly with the marine blue sea. To fully explore its ever-shifting steps without crowds, be sure to arrive early. Also, keep an eye out for young daredevils diving off its peak."
+  },
+  {
+    "title": "Mount Desert Island: Maine",
+    "imagePath": "./images/img-3.jpg",
+    "description": "Nearly 1,500 feet tall, Vestrahorn mountain towers above a lagoon and black sand beach so dramatically that some travelers refer to it as Batman Mountain. Remoteness is one of the sight's greatest assets, so expect to walk after driving to the Stokksnes peninsula to get the most stunning views. On sunny days, reflections in the water lapping on the black sand shore accentuate the unusual peaks."
+  },
+  {
+    "title": "The Pitons: Soufriere, St. Lucia",
+    "imagePath": "./images/img-4.jpg",
+    "description": "These lush twin peaks rising straight from the Caribbean Sea are St. Lucia's most famous sights. Part of the UNESCO World Heritage-listed Pitons Management Area, the Pitons feature fumaroles, hot springs, petroglyphs and ample wildlife-viewing opportunities. At 2,619 feet, Gros Piton is the taller and easier of the two to climb, though Petit Piton looks nearly identical in height when seen from the north."
+  },
+  {
+    "title": "Rangiroa Atoll: Tuamotu Archipelago, French Polynesia",
+    "imagePath": "./images/img-5.jpg",
+    "description": "Rangiroa comprises 240 motu (islets) arranged in a loose ring across 110-plus miles. The second largest atoll in the world, it attracts honeymooners and scuba divers keen on enjoying breathtaking scenery and exploring diverse marine environments. The primary lagoon is home to multicolored butterfly fish and turtles, while the open ocean is a prime spot for diving with whales, manta rays, dolphins and sharks. Look for accommodations, guides and gear on Avatoru and Tiputa, two of the motu that encircle the lagoon."
+  },
+  {
+    "title": "Wadi Rum Protected Area: Wadi Rum Village, Jordan",
+    "imagePath": "./images/img-6.jpg",
+    "description": "A 278-square-mile red rock desert occupied for thousands of years by Bedouins, the undulating dunes of Wadi Rum caught the West's attention a century ago when T. E. Lawrence (better known as Lawrence of Arabia) fought occupying forces during World War I. Today, locals welcome tourists to their goat-hair tents and lead camel rides to see the area's desert sunsets, mile-high sandstone pillars and ancient petroglyphs, sharing their culture along the way."
+  },
+  {
+    "title": "Luberon Regional Nature Park: Ménerbes, France",
+    "imagePath": "./images/img-7.jpg",
+    "description": "Though Provence features a variety of stunning landscapes, few are as breathtaking as the Luberon Regional Nature Park. Visit between the end of June and early August and you'll see (and smell) acres of blooming lavender plants. The herb's oil, which is known for its medicinal qualities, is pressed in local distilleries and workshops that welcome travelers, but for more insight about the plant, head to the Lavender Museum in Coustellet."
+  },
+  {
+    "title": "Milford Sound: Fiordland National Park, New Zealand",
+    "imagePath": "./images/img-8.jpg",
+    "description": "This gold-hued shore east of Dunn's River Falls & Park is where Honey Ryder (Ursula Andress) famously rose from the waves to greet James Bond (Sean Connery) in 'Dr. No.' Today, the beach is home to a private wedding venue with fern covered cliffs, small waterfalls and shallow surf, but it can be seen during select boat tours or by invitation from the St. Ann Development Company, its protector."
+  },
+  {
+    "title": "Lake Tahoe: California and Nevada",
+    "imagePath": "./images/img-9.jpg",
+    "description": "Although the emerald-green Lake Tahoe was carved 2 million years ago by shifting tectonic plates, only its past 10,000 years of erosion shaped the stunning recreational area into what's on display today. The four-season playground is home to trails, a pool, the Olympic Museum and more at High Camp, an area of Squaw Valley Alpine Meadows resort that sits 8,200 feet above sea level."
+  },
+  {
+    "title": "Grand Teton National Park: Wyoming",
+    "imagePath": "./images/img-10.jpg",
+    "description": "A neighbor to Yellowstone but much less crowded, this northwestern Wyoming park is easy to reach from Jackson and the popular Jackson Hole Mountain Resort. In addition to featuring towering evergreens and snow-capped mountains year-round, Grand Teton bursts with golden foliage, wildflowers and herds of elk every autumn. In fact, little has changed since Lewis and Clark trekked through this land as they headed west. Get a sample of what the iconic explorers saw while biking, canoeing and hiking with a ranger."
+  },
+  {
+    "title": "Plitvice Lakes National Park: Croatia",
+    "imagePath": "./images/img-11.jpg",
+    "description": "When Walt Disney Imagineering chose this region as the visual inspiration for the waterfalls at 'Pandora - The World of Avatar' in Orlando, Florida, it put this Croatian national park on the tourist map. Already a UNESCO World Heritage Site, Plitvice's otherworldly travertine formations, lush forests, gushing waterfalls and serene mountain lakes draw nature lovers in droves."
+  },
+  {
+    "title": "Sunwapta Valley: Jasper National Park, Alberta",
+    "imagePath": "./images/img-12.jpg",
+    "description": "Icefields Parkway is just one of several can't-miss sights in Jasper National Park's Sunwapta Valley. Traversing North America's largest ice mass south of the Arctic Circle, this famous highway offers a front-row seat to beautiful (but rapidly receding) glaciers. Go now and stop at the Glacier Skywalk, a cantilevered glass overlook that features stunning glacier vistas from 918 feet above ground."
+  }
+]

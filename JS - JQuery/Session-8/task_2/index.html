@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap-Places-List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header">
+      <h1>Places</h1>
+      <h6>Aenean commodo ligula eget dolor. Aenean massa.</h6>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="cards-div">
+      <div class="row row-cols-2 row-cols-md-4 g-4" id="parent-div"></div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3">
+        <!-- Contact Us Section -->
+        <div class="col">
+          <div class="contact pt-5">
+            <h2 class="w-text">contact us</h2>
+            <div class="flex-div pt-2 pb-2 mt-4">
+              <i class="fas fa-map-marker-alt w-text"></i>
+              <h6 class="w-text">
+                Our business address is 1063 Freelon Street <br />
+                San Francisco, CA 95108
+              </h6>
+            </div>
+            <div class="flex-div pt-2 pb-2">
+              <i class="fas fa-mobile-alt w-text"></i>
+              <h6 class="w-text">+020.566.2345 / or + 020.566.9876</h6>
+            </div>
+            <div class="flex-div pt-2 pb-2">
+              <i class="fas fa-envelope w-text"></i>
+              <h6 class="w-text">supportclient@decou.com</h6>
+            </div>
+            <button class="btn btn-light mb-5 mt-3">
+              <a href="#"> Contact form</a>
+            </button>
+          </div>
+        </div>
+
+        <!-- Connect with us Section -->
+        <div class="col">
+          <div class="connect pt-5">
+            <h2 class="w-text">connect with us</h2>
+            <div class="social mt-4">
+              <div class="rounded-div">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+              </div>
+              <div class="rounded-div">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+              <div class="rounded-div">
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+              </div>
+            </div>
+            <hr class="hr" />
+            <h6 class="w-text mb-4">
+              Sign up today and never miss another deal again!
+            </h6>
+            <div class="input-group group">
+              <i class="fal fa-envelope input-group-text bg-white"></i>
+              <input type="text" class="form-control" placeholder="Your e-mail address" aria-label="Your e-mail address"
+                aria-describedby="basic-addon1" />
+              <button class="input-group-text" id="basic-addon1">
+                <a class="sign-up" href="#">Sign Up!</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- About us Section -->
+        <div class="col">
+          <div class="about pt-5">
+            <h2 class="w-text">about us</h2>
+            <div class="about-content mt-4">
+              <h6 class="w-text">
+                Consectetur adipiscing elit. <br />
+                Aenean nisl orci, condimentum <br />
+                ultrices consequat eu
+              </h6>
+              <ul class="list w-text px-3">
+                <li>
+                  Aenean imperdiet fringilla ligula, ut mollis mi venenatis
+                </li>
+                <li>Nunc ullamcorper cursus eros pulvinar</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/scripts.js"></script>
+</body>
+
+</html>
+
+<!-- images source: https://travel.usnews.com/gallery/the-50-most-beautiful-landscapes-in-the-world?slide=24 -->

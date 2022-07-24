@@ -35,8 +35,6 @@ $(document).ready(function(){
     // when click on any card, get its content and send it to the modal function
     $(document).on("click", ".card",(function(){
 
-        console.log("hello");
-
         var cardImage = this.children[0]
         var cardBody = this.children[1]
         var cardTitle = cardBody.children[0].innerText

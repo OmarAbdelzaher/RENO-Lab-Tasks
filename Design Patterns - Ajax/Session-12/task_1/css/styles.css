@@ -1,0 +1,65 @@
+body{
+    background-color: rgb(182, 182, 182);
+}
+
+.avengers-header{
+    text-align: center;
+    background-image: linear-gradient(to right, rgb(189, 38, 38), rgb(76, 41, 181))
+}
+
+.avengers-header img{
+    width: 200px
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.side-list{
+    width: 30%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.main-view{
+    margin-top: 5vh;
+    width: 60%;
+    text-align: center;
+}
+
+.main-image{
+    border-radius: 20px;
+    height: 450px
+}
+
+ul{
+    margin-top: 5vh
+}
+
+li{
+    list-style: none;
+}
+
+.list-imgs{
+    height: 70px
+}
+
+li p {
+    font-size: 0.8rem;
+}
+
+.list-cards{
+    width: 6rem;
+    margin: 0 auto;
+    margin-top: 1vh;
+}
+
+form{
+    display: none;
+}
+
+form div{
+    width: 50%;
+    margin: 0 auto;
+}

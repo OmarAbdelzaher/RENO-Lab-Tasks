@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country News API</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <section>
+        <div class="swiper-button-prev"></div>
+        
+        <div class="swiper mySwiper container">
+          <div class="swiper-wrapper content" id="target"></div>
+        </div>
+        
+        <div class="swiper-button-next"></div>
+    </section>
+    
+    <div class="sc-div"></div>
+
+    <div class="news-div"></div>
+
+    <script id="flags-template" type="x-tmpl-mustache">
+        {{#flags}}
+            <div class="swiper-slide card" id={{cca2}}>
+                <div class="card-content">
+                    <div class="image">
+                        <img src={{flags.png}} alt="">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{name.common}}</h5>
+                        <h6 class="card-title">{{capital}}</h6>
+                    </div>
+                </div>
+            </div>
+        {{/flags}}
+    </script>
+
+    <script id="country-template" type="x-tmpl-mustache">
+        {{#country}}
+            <div class="selected-country">
+                <div class="sc-flag">
+                    <img src={{flags.png}}>
+                </div>
+                <div class="sc-detail">
+                    <h4>{{name.common}}</h6>
+                    <h5>Capital: {{capital}}</h5>
+                    <!-- <h5>Currency: {{#currencyFunc}}{{currencies}}{{/currencyFunc}}</h5> -->
+                    <!-- <h5>Language: {{languages}}</h5> -->
+                    <h5>Population: {{population}}</h5>
+                    <h5>Subregion: {{subregion}}</h5>
+                    <h5>Timezone: {{timezones}}</h5>
+                    <!-- <h5>Neighbors: {{neighbors}}</h5> -->
+                </div>
+            </div>
+        {{/country}}
+    </script>
+    
+
+
+    <script id="news-template" type="x-tmpl-mustache">
+        {{#news}}
+            <div class="country-news"> 
+                <div class="news-img">
+                    <img src={{urlToImage}} alt="news image">
+                </div>
+                <div class="news-detail">
+                    <h4>{{title}}</h2>
+                    <p>{{description}}</p>
+        
+                    <h5>{{source.name}}</h2>
+                    <h5>{{publishedAt}}</h4>
+                </div>
+            </div>
+        {{/news}}
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/scripts.js"></script>
+</body>
+</html>

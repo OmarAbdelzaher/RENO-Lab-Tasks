@@ -1,0 +1,71 @@
+.stats{
+    border:2px solid rgb(229, 228, 228);
+    padding: 1%
+}
+
+.card{
+    width: 90%;
+    margin: 5% 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.movies-div{
+    margin: 0 5%;
+}
+
+/* Modal Styles */
+
+.modal-image {
+    width: 50%;
+    height: 100%;
+    margin-right: 3%;
+}
+  
+.modal {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+    font-family: sans-serif;
+}
+  
+.modal__inner {
+    background: #ffffff;
+    width: 50%;
+}
+  
+.modal__top {
+    display: flex;
+    justify-content: flex-end;
+    background: #7e7e7e;
+} 
+
+.modal__close {
+    background: #7e7e7e;
+    color: #c3c2c2;
+    border : solid #7e7e7e;
+}
+  
+.modal__content {
+    display: flex;
+    flex-direction: row;
+}
+
+.modal__details{
+    padding: 1%;
+}
+
+.modal__details h5{
+    margin: 4% 0;
+}
+
+/* Pagination Styles */
+
+.pagination-div{
+    display: flex;
+    justify-content: center;
+}

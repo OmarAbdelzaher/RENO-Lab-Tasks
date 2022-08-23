@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import "./Book.css"
 import DropDown from './DropDown';
-// import { Link } from "react-router-dom";
-import { Navigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 export default class Book extends Component {

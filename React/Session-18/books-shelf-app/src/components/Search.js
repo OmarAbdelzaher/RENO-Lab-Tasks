@@ -47,7 +47,7 @@ const Search = ({ handleClose, show, handleUpdate}) => {
                     {
                         booksList.map((book, index) => {
                             return(
-                                <Col xs={2} md={3}>
+                                <Col xs={6} md={4} lg={3}>
                                     <Book book={book} key={index} handleUpdate={handleUpdate}/>
                                 </Col>
                             )

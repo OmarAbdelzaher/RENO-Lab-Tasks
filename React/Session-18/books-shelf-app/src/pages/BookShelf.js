@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/esm/Row';
 import Book from '../components/Book';
 import Search from '../components/Search';
 
+import Alert from 'react-bootstrap/Alert';
 
 export default class BookShelf extends Component {
     constructor(){
@@ -99,39 +100,48 @@ export default class BookShelf extends Component {
                             <h2>Currently Reading</h2>
                             <hr/>
                             <Row>
-                                {this.state.shelf.currentlyReading.map((book,index) => {
-                                    return (
-                                        <Col xs={2} md={3}>
-                                            <Book book={book} key={index} handleUpdate={this.updateBookShelf}/>
-                                        </Col>
-                                    )
-                                })}
+                                {
+                                    this.state.shelf.currentlyReading.length > 0 ? 
+                                    this.state.shelf.currentlyReading.map((book, index) => {
+                                        return (
+                                            <Col xs={12} md={4} lg={3}>
+                                                <Book book={book} key={index} handleUpdate={this.updateBookShelf}/>
+                                            </Col>
+                                            )
+                                        }) : <Alert key="danger" variant="danger">No books in this shelf.</Alert>
+                                }
                             </Row>
                         </div>
                         <div className='want-to-read book-section'>
                             <h2>Want to Read</h2>
                             <hr/>
                             <Row>
-                                {this.state.shelf.wantToRead.map((book,index) => {
-                                    return(
-                                        <Col xs={2} md={3}>
-                                            <Book book={book} key={index} handleUpdate={this.updateBookShelf}/>
-                                        </Col>
-                                    ) 
-                                })}
+                                {
+                                    this.state.shelf.wantToRead.length > 0 ? 
+                                    this.state.shelf.wantToRead.map((book,index) => {
+                                        return(
+                                            <Col xs={12} md={4} lg={3}>
+                                                <Book book={book} key={index} handleUpdate={this.updateBookShelf}/>
+                                            </Col>
+                                        ) 
+                                    }): <Alert key="danger" variant="danger">No books in this shelf.</Alert>
+                                }
                             </Row>
                         </div>
                         <div className='read book-section'>
                             <h2>Read</h2>
                             <hr/>
                             <Row>
-                                {this.state.shelf.read.map((book,index) => {
-                                    return(
-                                        <Col xs={2} md={3}>
-                                            <Book book={book} key={index} handleUpdate={this.updateBookShelf}/>
-                                        </Col>
-                                    ) 
-                                })}
+                                {
+                                    this.state.shelf.read.length > 0 ?
+                                    this.state.shelf.read.map((book,index) => {
+                                        return(
+                                            <Col xs={12} md={4} lg={3}>
+                                                <Book book={book} key={index} handleUpdate={this.updateBookShelf}/>
+                                            </Col>
+                                        ) 
+                                    }) : <Alert key="danger" variant="danger">No books in this shelf.</Alert>
+                                }
                             </Row>
                         </div>
                     </div>

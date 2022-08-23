@@ -17,7 +17,7 @@ export default class Card extends Component {
                     <BSCard.Text>Phone: {this.props.contact.phone}</BSCard.Text>
                     <BSCard.Text>Company: {this.props.contact.company.name}</BSCard.Text>
 
-                    <Button variant="primary" onClick={this.clickHandler}>Remove Contact</Button>
+                    <Button variant="danger" onClick={this.clickHandler}>Remove Contact</Button>
                 </BSCard.Body>
             </BSCard>
         )

@@ -1,0 +1,73 @@
+.stats-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.stats-display h4 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.stats-card {
+    padding: 5%;
+}
+
+/* .instagram{ */
+/* background: #f09433;  */
+/* background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);  */
+/* color : "linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)" */
+/* background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); */
+/* -webkit-background-clip: text; */
+/* Also define standard property for compatibility */
+/* -webkit-text-fill-color: transparent; */
+/* background: #d6249f;
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important; */
+/* font-size: 20px; change this to change the size */
+/* background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%); */
+
+/* } */
+
+.insta-icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 20%;
+    background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf)
+}
+
+.insta-icon:after,
+.insta-icon:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+    content: ''
+}
+
+.insta-icon:before {
+    border-radius: 25%
+}
+
+.insta-icon:after {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%
+}
+
+.stats-display svg{
+    font-size: 1.5rem;
+}
+
+.stats-percent{
+    margin-top: 20px;
+}
+
+.caret{
+    font-size: 1rem !important;
+}

@@ -1,0 +1,43 @@
+.main-cards{
+    text-align: center;
+    overflow: hidden;
+    padding: 0;
+}
+
+.main-cards h2{
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.main-cards h6{
+    padding: 5% 0;
+}
+
+.followers{
+    text-transform: uppercase !important;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+.media-bg{
+    height: 0.7vh;
+}
+
+.icon-user-display{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5% 0;
+}
+
+.icon-user-display h5{
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.icon-user-display svg{
+    font-size: 1.5rem;
+}
+

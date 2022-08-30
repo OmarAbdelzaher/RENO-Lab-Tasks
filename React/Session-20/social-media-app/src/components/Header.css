@@ -1,0 +1,79 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 4vh;
+}
+
+.left-header h4{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.right-header{
+    display: flex;
+    flex-direction: row;
+}
+
+.right-header h4{
+    font-size: 1rem;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+/* Checkbox Toggler */
+
+input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: grey;
+    float: right;
+    border-radius: 100px;
+    position: relative;
+}
+
+label:after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+label:hover{
+    background: linear-gradient(to right, #378FE6, #3EDA82);
+}
+
+input:checked+label {
+    background: linear-gradient(to right, #378FE6, #3EDA82);
+}
+
+input:checked+label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+    background: hsl(230, 17%, 14%);
+}
+
+label:active:after {
+    width: 45px;
+}
+
+/* transition */
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+    transition: all 750ms !important;
+    transition-delay: 0 !important;
+}

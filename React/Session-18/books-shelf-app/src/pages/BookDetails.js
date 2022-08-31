@@ -12,7 +12,6 @@ export default function BookDetails () {
             .then(res => res.json())
             .then(book => {
                 book.cover_i = book.covers ? book.covers[0] : ""
-                console.log(book)
                 setBook(book)
         })
     } , [])
@@ -27,12 +26,6 @@ export default function BookDetails () {
                 {/* <h2>{book.author_name}</h2> */}
                 {/* <h3>{book.publish_date}</h3> */}
                 {/* <p>{book.description}</p> */}
-            </div>
-
-            <div>
-                <form>
-                    <textarea placeholder='Type here your tweet'></textarea>
-                </form>
             </div>
         </div>
         );

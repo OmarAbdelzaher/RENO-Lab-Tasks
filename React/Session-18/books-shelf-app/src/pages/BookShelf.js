@@ -1,155 +1,136 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
+
 import Col from 'react-bootstrap/esm/Col';
 import Row from 'react-bootstrap/esm/Row';
+
 import Book from '../components/Book';
 import Search from '../components/Search';
 
 import Alert from 'react-bootstrap/Alert';
+import { useRef } from 'react';
 
-export default class BookShelf extends Component {
-    constructor(){
-        super();
-        this.addBtn = React.createRef();
+export default function BookShelf() {
+    const [currentlyReading, setCurrentlyReading] = useState(JSON.parse(localStorage.getItem('currentlyReading')));
+    const [wantToRead, setWantToRead] = useState(JSON.parse(localStorage.getItem('wantToRead')));
+    const [read, setRead] = useState(JSON.parse(localStorage.getItem('read')));
+    
+    const [show, setShow] = useState(false);
+    
+    const addBtn = useRef(null);
 
-        this.state = {
-            shelf : {
-                currentlyReading: [],
-                wantToRead: [],
-                read: [],
-            },
-            show: false,
-        }
-        this.showModal = this.showModal.bind(this);
-        this.hideModal = this.hideModal.bind(this);
-        this.updateBookShelf = this.updateBookShelf.bind(this);
-    }
-
-    showModal = () => {
-        this.setState({ show: true });
+    function showModal (){
+        setShow(true);
     };
     
-    hideModal = () => {
-        this.setState({ show: false });
+    function hideModal(){
+        setShow(false);
     };
+    
+    useEffect(() => {
+        bindevent();
+    } , [])
 
-    componentDidMount(){
-        this.bindevent();
-    }
-     
-    bindevent(){
-        this.addBtn.current.addEventListener('click', () => {
-            this.showModal();
+    function bindevent(){
+        addBtn.current.addEventListener('click', () => {
+            showModal();
         })
     }
+    
+    // Local Storage
 
-    updateBookShelf(book, shelf){
+    useEffect(() => {
+        localStorage.setItem('currentlyReading', JSON.stringify(currentlyReading));
+        localStorage.setItem('wantToRead', JSON.stringify(wantToRead));
+        localStorage.setItem('read', JSON.stringify(read));
+    }, [currentlyReading, wantToRead, read])
+
+
+    function filterShelves(bookId){
+        setCurrentlyReading(currentlyReading.filter((book) => book.key !== bookId))
+        setWantToRead(wantToRead.filter((book) => book.key !== bookId))
+        setRead(read.filter((book) => book.key !== bookId))
+    }
+
+    function updateBookShelf(book, shelf){
         if(shelf !== "none"){
-            fetch(`https://openlibrary.org${book}.json`).then(res => res.json()).then(book => {
-                let originalBook = {...book}
-
-                // originalBook.author_name = book.authors[0]
-                originalBook.cover_i = book.covers ? book.covers[0] : ""
-
-                // this.setState(prevState => {
-                //     const shelfBooks = prevState.shelf[shelf];
-                //     const newShelfBooks = shelfBooks.filter(b => b.key !== book.key);
-                //     newShelfBooks.push(book);
-                //     const newState = {
-                //         shelf: {
-                //             ...prevState.shelf,
-                //             [shelf]: newShelfBooks
-                //         }
-                //     }
-                //     return newState
-                // })
-            
-                this.state.shelf.currentlyReading = this.state.shelf.currentlyReading.filter(b => b.key !== book.key);
-                this.state.shelf.wantToRead = this.state.shelf.wantToRead.filter(b => b.key !== book.key);
-                this.state.shelf.read = this.state.shelf.read.filter(b => b.key !== book.key);
-                
-                this.setState({
-                    shelf: {
-                        ...this.state.shelf,
-                        [shelf]: [...this.state.shelf[shelf], originalBook]
-                    }
-                })
-            })
+            if(shelf === "currentlyReading"){
+                filterShelves(book.key)
+                setCurrentlyReading([...currentlyReading.filter((b) => b.key !== book.key), book])
+            }
+            if(shelf === "wantToRead"){
+                filterShelves(book.key)
+                setWantToRead([...wantToRead.filter((b) => b.key !== book.key), book])
+            }
+            if(shelf === "read"){
+                filterShelves(book.key)
+                setRead([...read.filter((b) => b.key !== book.key), book])
+            }
         }
         else{
-            this.state.shelf.currentlyReading = this.state.shelf.currentlyReading.filter(b => b.key !== book);
-            this.state.shelf.wantToRead = this.state.shelf.wantToRead.filter(b => b.key !== book);
-            this.state.shelf.read = this.state.shelf.read.filter(b => b.key !== book);
-
-            this.setState({
-                shelf: {
-                    ...this.state.shelf,
-                }
-            })
+            filterShelves(book.key)
         }
     }
 
-    render() {
-        return (
-            <>
-                <div className='wrapper'>
-                    <div className='header'>
-                        <h1>MyReads</h1>
-                    </div>
-                    <div className='shelf'>
-                        <div className='currently-reading book-section'>
-                            <h2>Currently Reading</h2>
-                            <hr/>
-                            <Row>
-                                {
-                                    this.state.shelf.currentlyReading.length > 0 ? 
-                                    this.state.shelf.currentlyReading.map((book, index) => {
-                                        return (
-                                            <Col xs={12} md={4} lg={3}>
-                                                <Book book={book} key={index} handleUpdate={this.updateBookShelf}/>
-                                            </Col>
-                                            )
-                                        }) : <Alert key="danger" variant="danger">No books in this shelf.</Alert>
-                                }
-                            </Row>
-                        </div>
-                        <div className='want-to-read book-section'>
-                            <h2>Want to Read</h2>
-                            <hr/>
-                            <Row>
-                                {
-                                    this.state.shelf.wantToRead.length > 0 ? 
-                                    this.state.shelf.wantToRead.map((book,index) => {
-                                        return(
-                                            <Col xs={12} md={4} lg={3}>
-                                                <Book book={book} key={index} handleUpdate={this.updateBookShelf}/>
-                                            </Col>
-                                        ) 
-                                    }): <Alert key="danger" variant="danger">No books in this shelf.</Alert>
-                                }
-                            </Row>
-                        </div>
-                        <div className='read book-section'>
-                            <h2>Read</h2>
-                            <hr/>
-                            <Row>
-                                {
-                                    this.state.shelf.read.length > 0 ?
-                                    this.state.shelf.read.map((book,index) => {
-                                        return(
-                                            <Col xs={12} md={4} lg={3}>
-                                                <Book book={book} key={index} handleUpdate={this.updateBookShelf}/>
-                                            </Col>
-                                        ) 
-                                    }) : <Alert key="danger" variant="danger">No books in this shelf.</Alert>
-                                }
-                            </Row>
-                        </div>
-                    </div>
-                    <div className='addBtnDiv' ref={this.addBtn}>+</div>
-
-                    <Search show={this.state.show} handleClose={this.hideModal} handleUpdate={this.updateBookShelf}></Search>
+    return (
+        <>
+            <div className='wrapper'>
+                <div className='header'>
+                    <h1>MyReads</h1>
                 </div>
+                <div className='shelf'>
+                    <div className='currently-reading book-section'>
+                        <h2>Currently Reading</h2>
+                        <hr/>
+                        <Row>
+                            {
+                                currentlyReading.length > 0 ? 
+                                    currentlyReading.map((book, index) => {
+                                    return (
+                                        <Col xs={12} md={4} lg={3}>
+                                            <Book book={book} key={index} handleUpdate={updateBookShelf}/>
+                                        </Col>
+                                        )
+                                    }) : <Alert key="danger" variant="danger">No books in this shelf.</Alert>
+                            }
+                        </Row>
+                    </div>
+                    <div className='want-to-read book-section'>
+                        <h2>Want to Read</h2>
+                        <hr/>
+                        <Row>
+                            {
+                                wantToRead.length > 0 ? 
+                                    wantToRead.map((book,index) => {
+                                    return(
+                                        <Col xs={12} md={4} lg={3}>
+                                            <Book book={book} key={index} handleUpdate={updateBookShelf}/>
+                                        </Col>
+                                    ) 
+                                }): <Alert key="danger" variant="danger">No books in this shelf.</Alert>
+                            }
+                        </Row>
+                    </div>
+                    <div className='read book-section'>
+                        <h2>Read</h2>
+                        <hr/>
+                        <Row>
+                            {
+                                read.length > 0 ?
+                                    read.map((book,index) => {
+                                    return(
+                                        <Col xs={12} md={4} lg={3}>
+                                            <Book book={book} key={index} handleUpdate={updateBookShelf}/>
+                                        </Col>
+                                    ) 
+                                }) : <Alert key="danger" variant="danger">No books in this shelf.</Alert>
+                            }
+                        </Row>
+                    </div>
+                </div>
+                <div className='addBtnDiv' ref={addBtn}>+</div>
 
-            </>
-        )}
+                <Search show={show} handleClose={hideModal} handleUpdate={updateBookShelf}></Search>
+            </div>
+        </>
+    )
 }

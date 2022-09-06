@@ -38,7 +38,6 @@ function ThemeProvider({ children }) {
     const isDark = !dark
     localStorage.setItem('dark', JSON.stringify(isDark))
     setDark(isDark)
-
   }
 
   const theme = dark ? themes.dark : themes.light

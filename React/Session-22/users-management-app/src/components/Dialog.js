@@ -6,55 +6,80 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from 'react'
+
+import { editUser, addUser } from '../store/users/users.actions';
+
+
 export default function FormDialog({open, handleClose, formType}) {
-    
-    function handleSubmit(){
+    const user = useSelector(({ users }) => users.details);
+    const dispatch = useDispatch();
+    const [updatedUser, setUpdatedUser] = useState({
+        id: user.id,
+        firstName: "",
+        lastName: "",
+        email: user.email,
+    });
+
+    function handleSubmit(e){
         handleClose()
+        e.preventDefault();
+        
+        if (formType === "edit") {
+            dispatch(editUser(updatedUser));
+        }else{
+            dispatch(addUser(updatedUser));
+        }
     }
 
-    function handleChange(e){
-        if(e.target.id === "fname"){
-            console.log(e.target.value)
+    useEffect(()=>{
+       if (formType === "edit"){
+            setUpdatedUser(user)
         }
-        else if(e.target.id === "lname"){
-            console.log(e.target.value)
+        else{
+            setUpdatedUser({
+                firstName: "",
+                lastName: "",
+                email: "",
+            })
         }
-        else if(e.target.id === "email"){
-            console.log(e.target.value)
-        }
-        else if(e.target.id === "phone"){
-            console.log(e.target.value)
-        }
-        else if(e.target.id === "location"){
-            console.log(e.target.value)
-        }
+    },[formType])
+
+    const onChange = (e) => {
+        setUpdatedUser({ ...updatedUser, [e.target.id]: e.target.value });
     }
+
 
     return (
         <div>
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>{
+                <DialogTitle style={{backgroundColor : "#000"}}>{
                     formType === "edit" ? "Edit User" : "Add User"}</DialogTitle>
                 <DialogContent>
                 <TextField
                     autoFocus
                     margin="dense"
-                    id="fname"
+                    id="firstName"
                     label="First Name"
                     type="text"
                     fullWidth
                     variant="standard"
-                    onChange={(e) => handleChange(e)}
+                    onChange={(e) => onChange(e)}
+                    value={updatedUser.firstName}
                 />
                 <TextField
                     margin="dense"
-                    id="lname"
+                    id="lastName"
                     label="Last Name"
                     type="text"
                     fullWidth
                     variant="standard"
-                    onChange={(e) => handleChange(e)}
+                    onChange={(e) => onChange(e)}
+                    value={updatedUser.lastName}
                 />
+                {
+                    formType === "add" ? 
                 <TextField
                     margin="dense"
                     id="email"
@@ -62,30 +87,25 @@ export default function FormDialog({open, handleClose, formType}) {
                     type="email"
                     fullWidth
                     variant="standard"
-                    onChange={(e) => handleChange(e)}
+                    onChange={(e) => onChange(e)}
+                    value={updatedUser.email}
                 />
+                : null}
+
                 <TextField
                     margin="dense"
-                    id="phone"
-                    label="Phone"
-                    type="number"
-                    fullWidth
-                    variant="standard"
-                    onChange={(e) => handleChange(e)}
-                />
-                <TextField
-                    margin="dense"
-                    id="location"
-                    label="Location"
+                    id="title"
+                    label="Title"
                     type="text"
                     fullWidth
                     variant="standard"
-                    onChange={(e) => handleChange(e)}
+                    onChange={(e) => onChange(e)}
+                    value={updatedUser.title}
                 />
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={handleSubmit}>Submit</Button>
+                    <Button color='success' onClick={(e) => handleSubmit(e)}>{formType === "edit" ? "Edit User" : "Add User"}</Button>
                 </DialogActions>
             </Dialog>
         </div>

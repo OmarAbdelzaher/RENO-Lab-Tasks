@@ -1,66 +1,55 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from "react-redux";
 import MaterialTable from "material-table";
 import tableIcons from "./MaterialTableIcons";
 import FormDialog from './Dialog';
 
+import { setCurrentUser, fetchUsers, deleteUser } from '../store/users/users.actions';
 
 export default function UsersTable() {
-  const [usersID, setUsersID] = useState([]);
   const [usersData, setUsersData] = useState([]);
-  const [isFetched, setIsFetched] = useState(false);
   const [formType, setFormType] = useState("add");
-
   const [open, setOpen] = useState(false);
+
+  const dispatch = useDispatch();
+  const users = useSelector(({ users }) => users.data);
+  const currUser = useSelector(({ users }) => users.details);
+
+  useEffect(() => {
+    if (users !== null) {
+      console.log(usersData);
+      setUsersData([...users]);
+    }
+  }, [users]);
+
 
   function handleClose() {
     setOpen(false);
   };
 
   useEffect(()=>{
-    fetch('https://dummyapi.io/data/v1/user?limit=100', {
-      headers: {
-        'app-id': '6315d7b2fd262fa0d52a512d'
-      }
-    })
-    .then(response => response.json())
-    .then(data => {
-      data.data.map((user) => {
-        setUsersID(usersID => [...usersID, user.id])
-      })
-      setIsFetched(true)
-    })
+    dispatch(fetchUsers());
   },[])
 
   useEffect(()=>{
-    usersID.map((id) => {
-      fetch(`https://dummyapi.io/data/v1/user/${id}`, {
-        headers: {
-          'app-id': '6315d7b2fd262fa0d52a512d'
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
-        setUsersData(usersData => [...usersData, data])
-      })
-    })
-  },[isFetched])
-  
+    console.log(currUser);
+  },[currUser])
+
   const columns = [
     { title: "First Name", field: "firstName" },
     { title: "Last Name", field: "lastName" },
-    { title: "Gender", field:"gender" },
+    { title: "Title", field:"title" },
     { title: "Email", field: "email" },
-    { title: "Phone", field: "phone" },
-    { title: "Loaction", field: "location.country" },
   ];
 
-  function handleEdit(rowData){
+  function handleEdit(event, rowData){
     setOpen(true);
     setFormType("edit");
+    dispatch(setCurrentUser(rowData))
   }
 
-  function handleDelete(rowData){
-
+  function handleDelete(event, rowData){
+    dispatch(deleteUser(rowData.id))
   }
 
   function handleAdd(){
@@ -70,17 +59,17 @@ export default function UsersTable() {
 
   return (
     <>
-    <MaterialTable title="User Management" columns={columns} data={usersData} icons={tableIcons}
+    <MaterialTable title="User Management" columns={columns} data={usersData.map(item => Object.assign({}, item))} icons={tableIcons}
     actions={[
       {
         icon: tableIcons.Delete,
         tooltip: "Delete User",
-        onClick: (rowData) => handleDelete(rowData),
+        onClick: (event, rowData) => handleDelete(event, rowData),
       },
       {
         icon: tableIcons.Edit,
         tooltip: "Edit User",
-        onClick: (rowData) => handleEdit(rowData),
+        onClick: (event, rowData) => handleEdit(event, rowData),
       },
       {
         icon: tableIcons.Add,
@@ -89,14 +78,6 @@ export default function UsersTable() {
         onClick: () => handleAdd(),
       },
     ]}
-    
-    // components={{
-    //   Action: (props) => (
-    //       <button onClick={(event) => props.action.onClick(event, props.data)}>
-    //           Custom Delete Button
-    //       </button>
-    //   ),
-    // }}
 
     options={{ sorting: true }}
     />

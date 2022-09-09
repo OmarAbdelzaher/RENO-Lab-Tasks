@@ -1,9 +1,10 @@
 import UsersActionTypes from "./users.types";
 
-
-import updateItemDetails from "./users.services"; 
-import addNewItem from "./users.services"; 
-import deleteItem from "./users.services"; 
+import {
+  updateItemDetails,
+  addNewItem,
+  deleteItem,
+} from "../../utils/modifier";
 
 
 const initialState = {
@@ -13,8 +14,9 @@ const initialState = {
   errorMessage: null,
 };
 
-const postReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
+    // Fetch Users 
     case UsersActionTypes.FETCH_USERS_START:
       return {
         ...state,
@@ -33,6 +35,26 @@ const postReducer = (state = initialState, action) => {
         errorMessage: action.payload,
     };
 
+    // Fetch User Details
+    case UsersActionTypes.FETCH_USER_START:
+      return {
+        ...state,
+        isFetching: true,
+    };
+    case UsersActionTypes.FETCH_USER_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        details: action.payload,
+    };
+    case UsersActionTypes.FETCH_USER_FAILURE:
+      return {
+        ...state,
+        isFetching: false,
+        errorMessage: action.payload,
+    };
+
+    // Edit User
     case UsersActionTypes.EDIT_USER_START:
       return {
         ...state,
@@ -51,6 +73,7 @@ const postReducer = (state = initialState, action) => {
         errorMessage: action.payload,
     };
 
+    // Add User
     case UsersActionTypes.ADD_USER_START:
       return {
         ...state,
@@ -69,6 +92,7 @@ const postReducer = (state = initialState, action) => {
         errorMessage: action.payload,
     };
 
+    // Delete User
     case UsersActionTypes.DELETE_USER_START:
       return {
         ...state,
@@ -86,9 +110,16 @@ const postReducer = (state = initialState, action) => {
         isFetching: false,
         errorMessage: action.payload,
     };
+
+    case UsersActionTypes.SET_CURRENT_USER:
+      return {
+        ...state,
+        details: action.payload,
+    };
+    
     default:
       return state;
   }
 };
 
-export default postReducer;
+export default userReducer;

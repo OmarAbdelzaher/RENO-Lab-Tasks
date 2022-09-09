@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import MaterialTable from "material-table";
 import tableIcons from "./MaterialTableIcons";
 import FormDialog from './Dialog';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
-import { setCurrentUser, fetchUsers, deleteUser } from '../store/users/users.actions';
+import { setCurrentUser, fetchUsers, deleteUser, toggleMenu } from '../store/users/users.actions';
 
 export default function UsersTable() {
   const [usersData, setUsersData] = useState([]);
@@ -13,15 +14,13 @@ export default function UsersTable() {
 
   const dispatch = useDispatch();
   const users = useSelector(({ users }) => users.data);
-  const currUser = useSelector(({ users }) => users.details);
+  const menuHidden = useSelector(({ users }) => users.menuHidden);
 
   useEffect(() => {
     if (users !== null) {
-      console.log(usersData);
       setUsersData([...users]);
     }
   }, [users]);
-
 
   function handleClose() {
     setOpen(false);
@@ -31,10 +30,6 @@ export default function UsersTable() {
     dispatch(fetchUsers());
   },[])
 
-  useEffect(()=>{
-    console.log(currUser);
-  },[currUser])
-
   const columns = [
     { title: "First Name", field: "firstName" },
     { title: "Last Name", field: "lastName" },
@@ -43,9 +38,9 @@ export default function UsersTable() {
   ];
 
   function handleEdit(event, rowData){
-    setOpen(true);
-    setFormType("edit");
     dispatch(setCurrentUser(rowData))
+    setFormType("edit");
+    setOpen(true);
   }
 
   function handleDelete(event, rowData){
@@ -57,8 +52,14 @@ export default function UsersTable() {
     setFormType("add");
   }
 
+  function handleSideBar(){
+    console.log("handleSideBar")
+    dispatch(toggleMenu(!menuHidden))
+  }
+
   return (
     <>
+    <MenuRoundedIcon onClick={handleSideBar}/>
     <MaterialTable title="User Management" columns={columns} data={usersData.map(item => Object.assign({}, item))} icons={tableIcons}
     actions={[
       {

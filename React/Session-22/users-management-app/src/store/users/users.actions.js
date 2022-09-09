@@ -126,7 +126,7 @@ export const addUser = (user) => (dispatch) => {
     .then((res) => {
         console.log(res.data);
         dispatch(addUserSuccess(res.data));
-        dispatch(fetchUsers());
+        // dispatch(fetchUsers());
         dispatch(setCurrentUser(res.data));
     })
     .catch((error) => dispatch(addUserFailure(error.message)));
@@ -135,4 +135,9 @@ export const addUser = (user) => (dispatch) => {
 export const setCurrentUser = (user) => ({
     type: UsersActionTypes.SET_CURRENT_USER,
     payload: user
+});
+
+export const toggleMenu = (toggle) => ({
+    type: UsersActionTypes.TOGGLE_MENU,
+    payload: toggle
 });

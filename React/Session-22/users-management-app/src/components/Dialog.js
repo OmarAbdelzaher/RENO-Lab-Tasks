@@ -23,7 +23,7 @@ export default function FormDialog({open, handleClose, formType}) {
     });
 
     function handleSubmit(e){
-        handleClose()
+        
         e.preventDefault();
         
         if (formType === "edit") {
@@ -31,6 +31,8 @@ export default function FormDialog({open, handleClose, formType}) {
         }else{
             dispatch(addUser(updatedUser));
         }
+
+        handleClose()
     }
 
     useEffect(()=>{
@@ -44,7 +46,7 @@ export default function FormDialog({open, handleClose, formType}) {
                 email: "",
             })
         }
-    },[formType])
+    },[formType, user])
 
     const onChange = (e) => {
         setUpdatedUser({ ...updatedUser, [e.target.id]: e.target.value });

@@ -20,6 +20,7 @@ const UsersActionTypes = {
     EDIT_USER_FAILURE: "EDIT_USER_FAILURE",
 
     SET_CURRENT_USER: "SET_CURRENT_USER",
+    TOGGLE_MENU : "TOGGLE_MENU",
   };
   
   export default UsersActionTypes;

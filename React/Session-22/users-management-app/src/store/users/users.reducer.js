@@ -12,6 +12,7 @@ const initialState = {
   data: [],
   details: {},
   errorMessage: null,
+  menuHidden: true,
 };
 
 const userReducer = (state = initialState, action) => {
@@ -117,6 +118,11 @@ const userReducer = (state = initialState, action) => {
         details: action.payload,
     };
     
+    case UsersActionTypes.TOGGLE_MENU:
+      return {
+        ...state,
+        menuHidden: action.payload,
+    };
     default:
       return state;
   }

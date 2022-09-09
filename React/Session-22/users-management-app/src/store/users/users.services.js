@@ -21,5 +21,4 @@ const editUser = (userId) => {
     return apiClient.put(`${RESOURCE}/${userId}`);
 };
 
-
 export default { fetchUsers, deleteUser, fetchUser, editUser, addUser };

@@ -1,0 +1,19 @@
+.form-container{
+    background-color: #f2f7f9;
+    height: 100vh;
+    padding-top: 7vh;
+}
+
+.sign-form{
+    width: 30%;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: #fff;
+    text-align: center;
+}
+
+.have-account{
+    width: 16%;
+    margin: 0 auto;
+    margin-top: 2vh;
+}
